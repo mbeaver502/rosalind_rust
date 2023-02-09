@@ -41,9 +41,23 @@ fn main() {
     }
 
     println!("{} {} = {}", a, b, ini2(a, b));
+
+    let s = ini3("HumptyDumptysatonawallHumptyDumptyhadagreatfallAlltheKingshorsesandalltheKingsmenCouldntputHumptyDumptyinhisplaceagain", 22,27,97,102);
+    println!("{}", s);
 }
 
 /// https://rosalind.info/problems/ini2/
 fn ini2(a: i32, b: i32) -> i32 {
     a.pow(2) + b.pow(2)
+}
+
+fn ini3(s: &str, a: usize, b: usize, c: usize, d: usize) -> String {
+    let s1 = s.get(a..=b).unwrap();
+    let s2 = s.get(c..=d).unwrap();
+
+    let mut s1 = s1.to_owned();
+    s1.push_str(" ");
+    s1.push_str(s2);
+
+    s1
 }
