@@ -24,5 +24,5 @@ fn parse_single_input(fname: &str) -> GenericResult<String> {
 
     file.read_line(&mut buf)?;
 
-    Ok(buf)
+    Ok(buf.trim().to_string())
 }
