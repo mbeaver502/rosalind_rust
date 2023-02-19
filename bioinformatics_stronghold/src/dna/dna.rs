@@ -48,6 +48,18 @@ impl DNA {
             count_t,
         }
     }
+
+    /// Transcribe a DNA strand into an RNA strand.
+    pub fn transcribe(&self) -> String {
+        self.dna
+            .chars()
+            .map(|n| match n {
+                'A' | 'C' | 'G' => n,
+                'T' => 'U',
+                _ => n,
+            })
+            .collect::<String>()
+    }
 }
 
 impl Display for NucleotideCount {
