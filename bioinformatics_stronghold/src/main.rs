@@ -5,4 +5,5 @@ pub mod rna;
 fn main() {
     //problems::dna("./tests/inputs/dna/rosalind_dna_1_dataset.txt");
     //problems::rna("./tests/inputs/rna/rosalind_rna_3_dataset.txt");
+    problems::revc("./tests/inputs/revc/rosalind_revc_1_dataset.txt");
 }
