@@ -2,8 +2,11 @@ pub mod dna;
 pub mod problems;
 pub mod rna;
 
+mod cli;
+
 fn main() {
-    //problems::dna("./tests/inputs/dna/rosalind_dna_1_dataset.txt");
-    //problems::rna("./tests/inputs/rna/rosalind_rna_3_dataset.txt");
-    problems::revc("./tests/inputs/revc/rosalind_revc_3_dataset.txt");
+    if let Err(e) = cli::get_args().and_then(cli::run) {
+        eprintln!("Encountered error: {}", e);
+        std::process::exit(1);
+    }
 }
