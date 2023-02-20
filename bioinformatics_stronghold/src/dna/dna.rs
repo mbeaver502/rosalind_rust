@@ -60,6 +60,24 @@ impl DNA {
             })
             .collect::<String>()
     }
+
+    /// Get the reverse complement of a DNA strand.
+    pub fn reverse_complement(&self) -> Self {
+        let dna = self
+            .dna
+            .chars()
+            .rev()
+            .map(|c| match c {
+                'A' => 'T',
+                'T' => 'A',
+                'C' => 'G',
+                'G' => 'C',
+                _ => c,
+            })
+            .collect::<String>();
+
+        Self { dna }
+    }
 }
 
 impl Display for NucleotideCount {
